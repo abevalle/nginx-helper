@@ -1,5 +1,5 @@
-output: src/main.o
-	g++ src/main.o -o dist/output
+nginx-utils: src/main.o
+	g++ src/main.o -o dist/nginx-utils
 
 validation.o: src/validation.cpp
 	g++ -c src/validation.cpp
@@ -11,7 +11,7 @@ makeNginx.0: src/makeNginx.cpp
 	g++ -c src/makeNginx.cpp
 
 clean:
-	rm src/*.o dist/output
+	rm src/*.o dist/nginx-utils
 
 run:
-	./dist/output
+	./dist/nginx-utils

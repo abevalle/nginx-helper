@@ -7,7 +7,7 @@ Portable utility to assist making nginx configs rapidily. This is mainly to use 
 ### Installation
 ---
 
-So far this is in development. But, if you wish to play around with it feel free! To do so:
+To install this run the following
 
 ```shell
 $ git clone https://github.com/abevalle/nginx-utils.git
@@ -19,7 +19,7 @@ $ cd nginx-utils
 Then run
 ```shell
 $ make
-$ make run
+$ sudo make run
 ```
 
 ### Usage
