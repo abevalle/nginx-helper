@@ -10,16 +10,12 @@ Portable utility to assist making nginx configs rapidily. This is mainly to use 
 To install this run the following
 
 ```shell
-$ git clone https://github.com/abevalle/nginx-utils.git
-```
-After cloning the repo into your local dev environment
-```shell
-$ cd nginx-utils
+$ wget https://github.com/abevalle/nginx-utils/raw/master/dist/nginx-utils
 ```
 Then run
 ```shell
-$ make
-$ sudo make run
+$ chmod +x nginx-utils
+$ sudo ./nginx-utils
 ```
 
 ### Usage
