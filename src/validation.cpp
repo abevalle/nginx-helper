@@ -1,6 +1,7 @@
 // domain validation function
 bool isValidDomain(string domain) {
-    const regex pattern("^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9].[a-zA-Z]{2,}$");
+    // const regex pattern("^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9].[a-zA-Z]{2,}$");
+    const regex pattern("(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z0-9][a-z0-9-]{0,61}[a-z]");
     if(regex_match(domain, pattern)) {
         return true;
     } else {
