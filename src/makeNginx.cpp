@@ -3,12 +3,12 @@
 #include <string>
 #include <filesystem>
 using namespace std;
-namespace fs = filesystem;
+// namespace fs = filesystem;
 
-int makeSymLink(string host) {
-   filesystem::create_symlink("/etc/nginx/sites-available/"+host, "/etc/nginx/sites-enabled/"+host);
-    return 0;
-}
+// int makeSymLink(string host) {
+//    filesystem::create_symlink("/etc/nginx/sites-available/"+host, "/etc/nginx/sites-enabled/"+host);
+//     return 0;
+// }
 
 int makeNginx(string host, bool access_logs, bool caching, string proxy_host, string proxy_host_port) {
     ofstream outfile ("/etc/nginx/sites-available/"+host);
@@ -41,8 +41,8 @@ int makeNginx(string host, bool access_logs, bool caching, string proxy_host, st
     outfile << "      }"<< endl;
     outfile << "}";
     outfile.close();
-    cout << "Making symbolic link";
-    makeSymLink(host);
+    // cout << "Making symbolic link";
+    // makeSymLink(host);
     cout << "Done!";
     cout << "Make symlink function is still development. Please create symlink then reload nginx.";
 

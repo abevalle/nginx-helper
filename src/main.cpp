@@ -1,10 +1,10 @@
-using namespace std;
 #include <iostream>
 #include <string>
 #include <regex>
 #include <fstream>
 #include "validation.cpp"
 #include "makeNginx.cpp"
+using namespace std;
 
 
     string host;

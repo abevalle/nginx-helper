@@ -1,3 +1,7 @@
+#include <regex>
+#include <string>
+using namespace std;
+
 // domain validation function
 bool isValidDomain(string domain) {
     // const regex pattern("^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9].[a-zA-Z]{2,}$");
@@ -19,6 +23,13 @@ bool isValidIp(string ip) {
     }
 }
 
+bool isLocalhost(string host) {
+    if(host == "localhost") {
+        return true;
+    }
+    return false;
+}
+
 // port validation function
 bool isValidPort(string port) {
     const regex pattern("^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$");
@@ -35,7 +46,9 @@ int isIpOrDomain(string proxy_host) {
         return 1;
     } else if (isValidDomain(proxy_host)) {
         return 2;
-    } else {
+    } else if (isLocalhost(proxy_host)) {
+        return 3;
+    } else {    
         return 0;
     }
 }
