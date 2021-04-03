@@ -1,7 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <filesystem>
 using namespace std;
+namespace fs = filesystem;
+
+int makeSymLink(string host) {
+   filesystem::create_symlink("/etc/nginx/sites-available/"+host, "/etc/nginx/sites-enabled/"+host);
+    return 0;
+}
 
 int makeNginx(string host, bool access_logs, bool caching, string proxy_host, string proxy_host_port) {
     ofstream outfile ("/etc/nginx/sites-available/"+host);
@@ -25,15 +32,19 @@ int makeNginx(string host, bool access_logs, bool caching, string proxy_host, st
         outfile << "      }" << endl;
     }
     outfile << "        location / {" << endl;
-    outfile << "            proxy_set_header Host $host;" << endl;
-    outfile << "            proxy_pass http://"<<proxy_host<<":"<<proxy_host_port<<"/;"<<endl;
-    outfile << "            proxy_redirect off;" << endl;
+    outfile << "           proxy_set_header Host $host;" << endl;
+    outfile << "           proxy_pass http://"<<proxy_host<<":"<<proxy_host_port<<"/;"<<endl;
+    // Disabled because it breakes things in ngnix
+    // outfile << "           proxy_redirect off;" << endl;
     outfile << "           proxy_set_header X-Real-IP $remote_addr;" << endl;
     outfile << "           proxy_set_header X-Forwarded-Proto https;"<< endl;
     outfile << "      }"<< endl;
     outfile << "}";
     outfile.close();
+    cout << "Making symbolic link";
+    makeSymLink(host);
     cout << "Done!";
+    cout << "Make symlink function is still development. Please create symlink then reload nginx.";
 
     return 0;
 }

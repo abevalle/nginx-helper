@@ -6,6 +6,7 @@ using namespace std;
 #include "validation.cpp"
 #include "makeNginx.cpp"
 
+
     string host;
     string host_port;
     string proxy_host;
@@ -59,15 +60,6 @@ int getProxyInfo() {
         cout<<"A fatal error has occured please check your entry and try again";
     }
 
-    // Detect if user is using an ip or domain for thair proxy_pass
-    // if (isIpOrDomain(proxy_host) == 1) {
-    //     cout<<"You are using an ip as your proxy_pass";
-    // } else if (isIpOrDomain(proxy_host) == 2) {
-    //     cout<<"you are using a domain as your proxy_pass";
-    // } else if (isIpOrDomain(proxy_host) == 0) {
-    //     cout<<"ERR: something went wrong check your entry!! Then try again.";
-    // }
-
     return 0;   
 }
 
@@ -89,12 +81,6 @@ int getHostInfo() {
         getProxyInfo();
     }
     return 0;   
-}
-
-
-
-int makeConfig() {
-    return 0;
 }
 
 int start() {
