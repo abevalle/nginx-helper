@@ -20,7 +20,7 @@ int getOpts() {
     string caching_opt;
     string access_logs_opt;
     
-    cout<<"Would you like your website to cache? (y/n): ";
+    cout<<"Would you like your website to cache? (This can break things at the moment) (y/n): ";
     cin>>caching_opt;
     if(caching_opt == "y" || caching_opt == "Y") {
         caching = true;
@@ -42,7 +42,7 @@ int getOpts() {
         return 0;
     }
 
-    makeNginx(host, access_logs, caching, proxy_host, proxy_host_port);
+    makeNginx(host, host_port, access_logs, caching, proxy_host, proxy_host_port);
 
     return 0;
 }
