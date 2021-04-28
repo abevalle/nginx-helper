@@ -13,21 +13,6 @@ class Nginx {
     bool access_logs;
 
     public: 
-
-    void Host(string hostname, int port) {
-        host = hostname;
-        host_port = port;
-    }
-
-    void RevProxy(string hostname, int port) {
-        proxy_host = hostname;
-        proxy_host_port = port;
-    }
-
-    string getHost() {
-        return host;
-    }
-
     void init() {
         getHostInfo();
     }
