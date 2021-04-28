@@ -5,27 +5,32 @@ using namespace std;
 
 class menu {
     public:
-        string opts;
+        string opts[5];
         int optsLen;
 
-    void newMenu(string optList[]) {
-        optsLen = sizeof(optList)/sizeof(optList[0]);
-        opts[optsLen] = optList;
+    void newMenu(string *optList, int len) {
+        optsLen = len;
+        for(unsigned int i = 0; i < optsLen; i = i + 1 ) {
+            opts[i] = optList[i];
+        }
     }
 
     void start() {
-        
-
         cout << "Welcome to Ngnix Utils" << endl;
         cout << "Please select from an option below" << endl;
-        listOpts(opts, optsLen);
+        listOpts();
     }
+
+    int exit(int code) {
+        cout << "good bye.";
+        return code;
+    };
 
     int listOpts() {
         for( unsigned int a = 0; a < optsLen; a = a + 1 ) {
             cout << a+1 << ": " << opts[a] << '\n';
         }
-        getUserOpt(opts, optsLen);
+        getUserOpt();
 
         return 0;
     };
@@ -34,10 +39,10 @@ class menu {
         int opt;
         cout << "Please select and option: ";
         cin >> opt;
-        if ((opt >= 1) && (opt <= optsLen)) {
-
-        } else {
-            return 1;
+        if ((opt >= 1) && (opt <= optsLen-1)) {
+            cout << optsLen << endl;
+        } else if (opt == optsLen) {
+            exit(1);
         }
 
         return opt;

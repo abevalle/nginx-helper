@@ -7,10 +7,10 @@ validation.o: src/validation.cpp
 main.o: src/main.cpp
 	g++ -std=c++17 src/main.cpp
 
-main.o: src/menu.cpp
+menu.o: src/menu.cpp
 	g++ -std=c++17 src/menu.cpp
 
-makeNginx.0: src/makeNginx.cpp
+makeNginx.o: src/makeNginx.cpp
 	g++ -std=c++17 src/makeNginx.cpp
 
 clean:
