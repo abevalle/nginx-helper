@@ -14,4 +14,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
-        uses: nicledomaS/cmake_build_action@v1.4
+        uses: make
