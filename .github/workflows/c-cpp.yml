@@ -12,8 +12,8 @@ jobs:
     runs-on: debian-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: configure
+    # - uses: actions/checkout@v2
+    # - name: configure
       run: ./configure
     - name: make
       run: make
