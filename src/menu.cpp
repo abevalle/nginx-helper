@@ -7,6 +7,7 @@ class menu {
     public:
         string opts[5];
         int optsLen;
+        int opt;
 
     void newMenu(string *optList, int len) {
         optsLen = len;
@@ -35,17 +36,17 @@ class menu {
         return 0;
     };
 
-    int getUserOpt() {
-        int opt;
-        cout << "Please select and option: ";
+    void getUserOpt() {
+        cout << "Please select an option: ";
         cin >> opt;
         if ((opt >= 1) && (opt <= optsLen-1)) {
-            cout << optsLen << endl;
         } else if (opt == optsLen) {
             exit(1);
         }
-
-        return opt;
     };
+
+    int userOpt() {
+        return opt;
+    }
 
 };
