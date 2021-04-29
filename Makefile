@@ -10,17 +10,21 @@ validation.o: src/validation.h src/validation.cpp
 main.o: src/main.cpp
 	$(CC) $(CFLAGS) src/main.cpp
 
-test_unit.o: src/test_unit.cpp
-	$(CC) $(CFLAGS) src/test_unit.cpp
+test: src/test.o
+	$(CC) $(CFLAGS) src/test.o -o dist/unit-test -lstdc++fs
+
+test.o: src/test.cpp
+	$(CC) $(CFLAGS) src/test.cpp
 
 menu.o: src/menu.cpp
 	$(CC) $(CFLAGS) src/menu.cpp
+	
 
 makeNginx.o: src/makeNginx.cpp
 	$(CC) $(CFLAGS) src/makeNginx.cpp
 
 clean:
-	rm src/*.o dist/nginx-utils test_unit
+	rm src/*.o dist/nginx-utils dist/unit-test
 
 run:
 	./dist/nginx-utils

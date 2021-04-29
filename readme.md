@@ -11,13 +11,13 @@ Portable utility to assist making nginx configs rapidily. This is mainly to use 
 To install this run the following
 
 ```shell
-$ wget https://github.com/abevalle/nginx-utils/raw/master/dist/nginx-utils
+$ curl -o- https://github.com/abevalle/nginx-utils/raw/master/dist/nginx-utils | bash
 ```
-Then run
+<!-- Then run
 ```shell
-$ chmod +x nginx-utils
+$ chmod +x /etc/nginx-utils
 $ sudo ./nginx-utils
-```
+``` -->
 
 ### Usage
 ---

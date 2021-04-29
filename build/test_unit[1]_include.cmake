@@ -1,5 +1,0 @@
-if(EXISTS "/home/abe/code/nginx-utils/build/test_unit[1]_tests.cmake")
-  include("/home/abe/code/nginx-utils/build/test_unit[1]_tests.cmake")
-else()
-  add_test(test_unit_NOT_BUILT test_unit_NOT_BUILT)
-endif()

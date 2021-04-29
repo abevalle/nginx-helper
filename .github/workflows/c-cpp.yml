@@ -17,5 +17,9 @@ jobs:
     - name: configure
       run: cmake .
     - name: make
-      run: make
+      run: make 
+    - name: make test
+      run: make test
+    - name: test
+      run: ./dist/unit-test
     
