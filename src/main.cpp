@@ -4,7 +4,10 @@
 #include "nginx.cpp"
 
 int main() {
-    string startOpts[] = { "Create New Nginx Site", "Disable Nginx Site", "View all Nginx Sites", "exit" };
+    string startOpts[] = { "Create New Nginx Site", "exit" };
+    // ToDO
+    // Add the following menu items
+    // "Disable Nginx Site", "View all Nginx Sites",
     cout << isValidDomain("google.com");
 
     menu start;
