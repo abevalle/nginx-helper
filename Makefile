@@ -4,7 +4,7 @@ CFLAGS = -std=c++17 -g -w -Wall
 nginx-utils: src/main.o src/validation.o src/makeNginx.o src/menu.o
 	$(CC) $(CFLAGS) src/main.o -o dist/nginx-utils -lstdc++fs
 
-check: src/test.o
+unit-test: src/test.o
 	$(CC) $(CFLAGS) src/test.o -o dist/unit-test -lstdc++fs
 
 validation.o: src/validation.h src/validation.cpp

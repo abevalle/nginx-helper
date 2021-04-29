@@ -5,6 +5,8 @@
 
 int main() {
     string startOpts[] = { "Create New Nginx Site", "Disable Nginx Site", "View all Nginx Sites", "exit" };
+    cout << isValidDomain("google.com");
+
     menu start;
     start.newMenu(startOpts, sizeof(startOpts)/sizeof(startOpts[0]));
     start.start();
@@ -16,6 +18,7 @@ int main() {
         newSite.init();
         break;
     }
+
 
     return 0;
 }
