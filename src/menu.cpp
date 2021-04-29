@@ -3,7 +3,9 @@
 #include <array>
 using namespace std;
 
+
 class menu {
+    
     public:
         string opts[5];
         int optsLen;
