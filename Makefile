@@ -10,7 +10,7 @@ validation.o: src/validation.h src/validation.cpp
 main.o: src/main.cpp
 	$(CC) $(CFLAGS) src/main.cpp
 
-test: src/test.o
+chcek: src/test.o
 	$(CC) $(CFLAGS) src/test.o -o dist/unit-test -lstdc++fs
 
 test.o: src/test.cpp
