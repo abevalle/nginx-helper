@@ -1,4 +1,5 @@
 ### NGINX-UTILS
+[![Build](https://github.com/abevalle/nginx-utils/actions/workflows/c-cpp.yml/badge.svg?branch=refactor)](https://github.com/abevalle/nginx-utils/actions/workflows/c-cpp.yml)
 ---
 
 Portable utility to assist making nginx configs rapidily. This is mainly to use on my nginx docker container to make deployment faster and easier for new websites.
