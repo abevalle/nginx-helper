@@ -1,0 +1,4 @@
+/home/abe/code/nginx-utils/build/CMakeFiles/rebuild_cache.dir
+/home/abe/code/nginx-utils/build/CMakeFiles/edit_cache.dir
+/home/abe/code/nginx-utils/build/CMakeFiles/test_unit.dir
+/home/abe/code/nginx-utils/build/CMakeFiles/test.dir

@@ -1,5 +1,6 @@
 #include <regex>
 #include <string>
+#include "validation.hpp"
 using namespace std;
 
 // domain validation function
